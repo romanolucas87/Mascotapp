@@ -7,7 +7,7 @@ function App() {
   return (
     <>   
      <NavBar />  
-     <ItemListContainer greetings="Bienvenidos"/>
+     <ItemListContainer greetings="Bienvenidos a la primera entrega de Lucas Romano"/>
   
 
     </>
