@@ -4,9 +4,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LogoApp from '../assets/LogoMascotapp.png'
 import Image from 'react-bootstrap/Image';
+import CartWidget from './CartWidget';
 
 
-function CollapsibleExample() { 
+function NavBar() { 
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-secondary">
@@ -44,9 +45,13 @@ function CollapsibleExample() {
               </NavDropdown.Item>              
             </NavDropdown>
           </Nav>
-          <Nav>
-            <Nav.Link href="#deets">Carrito</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">Iniciar Sesión</Nav.Link>
+          <Nav className='justify-content-end'>
+            <Nav.Item>
+            <Nav.Link href="#cart"><CartWidget item="912"/></Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+            <Nav.Link className='text-center mt-4 mb-4' eventKey={2} href="#login">Iniciar Sesión</Nav.Link>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -54,4 +59,4 @@ function CollapsibleExample() {
   );
 }
 
-export default CollapsibleExample;
+export default NavBar;
