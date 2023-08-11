@@ -7,17 +7,17 @@ import React, {useState, useEffect} from 'react';
 
 const productsPets = [
   { id: 1, 
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM_7LgJTvk4V_MrST7q6ML-0egMJb0P7bTAg&usqp=CAU",
-    title:"Correa para perro"},
+    pictureUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM_7LgJTvk4V_MrST7q6ML-0egMJb0P7bTAg&usqp=CAU",
+    title:"Correa para perro", description:"Loren Ipsum", price:1500},
   { id: 2, 
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs5fx1A17xjDoD1h3F8lzy8mDCWQ55KiQoqnCoe7HnR1gP1MBJxL_476DGTb_QYUwN0ug&usqp=CAU",
-    title:"Cama para perro"},
+    pictureUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs5fx1A17xjDoD1h3F8lzy8mDCWQ55KiQoqnCoe7HnR1gP1MBJxL_476DGTb_QYUwN0ug&usqp=CAU",
+    title:"Cama para perro", description:"Loren Ipsum", price:3700},
   { id: 3, 
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpGq2ArnMvUUisUjhQQJ7zQYfQs0g5fd3xyQ&usqp=CAU",
-    title:"Rascador para gato"},
+    pictureUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpGq2ArnMvUUisUjhQQJ7zQYfQs0g5fd3xyQ&usqp=CAU",
+    title:"Rascador para gato", description:"Loren Ipsum", price:5000},
   { id: 4, 
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8BaYwRxTcdkKEg5NxNVXciU926XczYO6icA9QIoxD3oZTx13e0otymeWSTQ0ZAYwOGdw&usqp=CAU",
-    title:"Dispenser de Comida Automatico"},
+    pictureUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8BaYwRxTcdkKEg5NxNVXciU926XczYO6icA9QIoxD3oZTx13e0otymeWSTQ0ZAYwOGdw&usqp=CAU",
+    title:"Dispenser de Comida Automatico", description:"Loren Ipsum", price:10000},
 ];
 
 
