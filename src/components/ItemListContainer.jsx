@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { ItemCount } from './ItemCount';
 import ItemList from "./ItemList";
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 const productsPets = [
   { id: 1, 
@@ -22,9 +22,7 @@ const productsPets = [
 
 
  const ItemListContainer = ({greetings}) =>{
-  const onAdd = (quantity)=>{
-    console.log(`Compraste ${quantity} unidades`);
-  }
+ 
     const [data, setData]= useState([]);
     useEffect(() => {
       const getData= new Promise(resolve => {
@@ -46,7 +44,6 @@ const productsPets = [
 
            <Row >
             <Col><h1>{greetings} </h1></Col>
-            <ItemCount initial={1} stock={9} onAdd={onAdd}/>
           </Row>
         </Container>
         </>

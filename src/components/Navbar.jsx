@@ -5,17 +5,19 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import LogoApp from '../assets/LogoMascotapp.png'
 import Image from 'react-bootstrap/Image';
 import CartWidget from './CartWidget';
-
+import { Link } from 'react-router-dom';
 
 function NavBar() { 
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-secondary">
       <Container>
-        <Navbar.Brand href="#home"> <ion-icon name="bag"></ion-icon>
-              <Image  src= {LogoApp} alt="Logo" sizes='sm' style={{ width: '75px', height: '75px' }}  />
-              
+        {/* <Link to={"/"}>   */}
+        <Navbar.Brand href="/"> <ion-icon name="bag"></ion-icon>
+              <Image  src= {LogoApp} alt="Logo" sizes='sm' style={{ width: '75px', height: '75px' }}  />             
+              {/* <NavBar.Link></NavBar.Link> */}
               </Navbar.Brand>
+              {/* </Link> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
