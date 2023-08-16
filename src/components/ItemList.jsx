@@ -1,8 +1,26 @@
 import Item from "./Item";
-import React from "react";
-const ItemList= ({data = []}) =>  {
+import { Link } from 'react-router-dom';
+const ItemList= ({productList = []}) =>  {
     return (
-        data.map(product => <Item key = {product.id} info ={product}/>)
+        <section
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "2rem",
+        }}>
+        {productList.map((product) =>{
+            return(
+                <Link key={product.id} to={`/item/${product.id}`}>
+                <Item info={product}/>
+                     </Link>
+            )
+        })  
+
+        }
+        </section>
+       
     );
 };
 

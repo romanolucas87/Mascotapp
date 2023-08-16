@@ -1,27 +1,31 @@
 import ItemDetail from "./ItemDetail"
 import { useState, useEffect } from "react";
-const productsPets = { 
-      id: 1, 
-      pictureUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM_7LgJTvk4V_MrST7q6ML-0egMJb0P7bTAg&usqp=CAU",
-      title:"Correa para perro", description:"Loren Ipsum", price:1500
-    }
+import { getProduct } from '../AsyncMock';
+import Loader from './Loader';
+import { useParams } from "react-router-dom";
 
 
 export const ItemDetailContainer = () =>{
     
-    const[data, setData] = useState([]);
-    
+    const[product, setProduct] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const productID = useParams();
+
     useEffect(() => {
-        const getData = new Promise(resolve=> {
-            setTimeout(()=>{
-                resolve(productsPets)
-            }, 3000)
-        })
-        getData.then(res=> setData(res));
-    }, []
+        console.log(productID)
+        getProduct(productID.id)
+        .then( result => {console.log(result);
+                setProduct({...result})})
+        .catch(error => console.error(error))
+        .finally(()=> setIsLoading(false));
+
+
+    }, [productID]
     )
+    if(isLoading) return <Loader/>;
+
         return (
-        <ItemDetail data={data}/>
+        <ItemDetail data={product}/>
     )
 }
 
