@@ -13,12 +13,7 @@ import Loader from './Loader';
     useEffect(() => { 
       getProducts()
         .then((response) => {
-          if(params.id){
-            setProducts(response.filter(product => product.category == params.id))
-          } 
-            else{
-              setProducts(response)
-            }
+          params.id ? setProducts(response.filter(product => product.category == params.id)) : setProducts(response);          
         })
         .catch(error => console.error(error))
         .finally(()=> setIsLoading(false));     
