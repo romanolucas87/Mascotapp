@@ -1,16 +1,33 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import ItemList from "./ItemList";
+import {useState, useEffect} from 'react';
+import { useParams } from "react-router-dom";
+import { getProducts } from '../AsyncMock';
+import Loader from './Loader';
 
-
-
-function ItemListContainer ({greetings}){
+ const ItemListContainer = () =>{
+    const [products, setProducts]= useState([]);
+    const params = useParams();
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => { 
+      getProducts()
+        .then((response) => {
+          params.id ? setProducts(response.filter(product => product.category == params.id)) : setProducts(response)          
+        })
+        .catch(error => console.error(error))
+        .finally(()=> setIsLoading(false));     
+      
+    }, [params]);
+    if(isLoading) return <Loader/>;
     return (
-        <Container className='text-center'>
-          <Row >
-            <Col><h1>{greetings} </h1></Col>
-          </Row>
+      <>
+        <Container className='text-center'>         
+          <Row className='m-3'> 
+           <ItemList productList = {products}></ItemList>         
+          </Row>          
         </Container>
+        </>
       );
     }
 
