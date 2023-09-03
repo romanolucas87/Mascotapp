@@ -12,7 +12,7 @@ export const ItemDetailContainer = () =>{
     const productID = useParams();
 
     useEffect(() => {
-        console.log(productID)
+        console.log(productID);
         getProduct(productID.id)
         .then( result => {console.log(result);
                 setProduct({...result})})

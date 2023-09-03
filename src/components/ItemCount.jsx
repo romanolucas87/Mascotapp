@@ -17,8 +17,7 @@ export const ItemCount = ({initial, stock, onAdd})=>{
     },[initial])
     return (
         <div className='counter'>
-            {/* <button disabled={count <= 1} onClick={decrease}><DashCircle size={15} color="blue"/></button> */}
-            <DashCircle disabled={count <= 1} onClick={decrease} size={21} color="blue" ></DashCircle>
+            <button disabled={count <= 1} onClick={decrease}><DashCircle size={15} color="blue"/></button>
             <span className="p-2">{count}</span>
 
             <button disabled={count >= stock} onClick={increase}><PlusCircle size={15} color="blue"/></button>
