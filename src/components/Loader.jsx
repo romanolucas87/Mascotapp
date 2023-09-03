@@ -4,9 +4,10 @@ import Card from 'react-bootstrap/Card';
 function Loader() {
   return (
     <Card>
-        <Spinner animation="border" role="status">
+        <Spinner animation="border" role="status"> 
       <span className="visually-hidden">Loading...</span>
     </Spinner>
+    Loading...
     </Card>
    
   );

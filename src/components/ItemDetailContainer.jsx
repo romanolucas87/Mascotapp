@@ -12,7 +12,6 @@ export const ItemDetailContainer = () =>{
     const productID = useParams();
 
     useEffect(() => {
-        console.log(productID);
         getProduct(productID.id)
         .then( result => {console.log(result);
                 setProduct({...result})})
@@ -24,8 +23,17 @@ export const ItemDetailContainer = () =>{
     )
     if(isLoading) return <Loader/>;
 
+    // return(
+    //     <>
+    //     {isLoading && <Loader/>}
+    //     {!isLoading &&(
+    //         <ItemDetail data={product}/>
+    //     )}
+    //     </>
+    // )
         return (
         <ItemDetail data={product}/>
+
     )
 }
 
