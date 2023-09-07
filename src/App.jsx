@@ -5,6 +5,7 @@ import NavBar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CartProvider from './context/CartContext';
+import  Cart  from './components/Cart';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element ={<><NavBar/> <ItemListContainer/></>}/>
         <Route  path="/category/:id" element ={<><NavBar/> <ItemListContainer /></>}/>
         <Route path="/item/:id" element ={<><NavBar/> <ItemDetailContainer /></>}/>
+        <Route path="/cart/" element ={<><NavBar/> <Cart/> </>}/>
       </Routes>
       </CartProvider>
     </BrowserRouter>        
