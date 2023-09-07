@@ -7,8 +7,8 @@ import Image from 'react-bootstrap/Image';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 
-function NavBar() { 
 
+function NavBar() { 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-secondary">
       <Container>         
@@ -48,8 +48,7 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav className='justify-content-end'>
-            <Nav.Item>
-            <Nav.Link href="#cart"><CartWidget item="912"/></Nav.Link>
+            <Nav.Item><Link to={"/cart"}><CartWidget/></Link>
             </Nav.Item>
             <Nav.Item>
             <Nav.Link className='text-center mt-4 mb-4' eventKey={2} href="#login">Iniciar Sesión</Nav.Link>
