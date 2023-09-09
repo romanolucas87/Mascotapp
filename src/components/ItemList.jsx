@@ -1,26 +1,20 @@
 import Item from "./Item";
 import { Link } from 'react-router-dom';
+import { CardGroup } from "react-bootstrap";
 const ItemList= ({productList = []}) =>  {
-    return (
-        <section
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "2rem",
-        }}>
-        {productList.map((product) =>{
+    return (        
+             <CardGroup>
+                 {productList.map((product) =>{
             return(
-                <Link key={product.id} to={`/item/${product.id}`}>
-                <Item info={product}/>
-                     </Link>
+                <>
+                <Link  to={`/item/${product.id}`}  className="text-decoration-none">
+                <Item key={product.id} info={product}/>
+                </Link>                
+                     </>   
             )
-        })  
+        })}
+           </CardGroup>
 
-        }
-        </section>
-       
     );
 };
 

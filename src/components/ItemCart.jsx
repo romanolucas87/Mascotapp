@@ -4,8 +4,8 @@ import { useCartContext } from "../context/CartContext"
 const ItemCart = ({product}) =>{
     const {removeProduct} = useCartContext();
     return (
-        <Card>
-            <Card.Img variant="top" src={product.pictureUrl}/>
+        <Card style={{ width: '18rem', height:'auto'}}  border="dark" className="m-1" bg="light">
+            <Card.Img variant="top" src={product.pictureUrl}style={{ width: '100%', height: '175px' }} className="m-1 mx-auto my-auto"/>
             <Card.Body>   
                 <Card.Title>
                     {product.title}
@@ -16,7 +16,9 @@ const ItemCart = ({product}) =>{
                 <Card.Subtitle className="mb-2 text-muted">Cantidad: {product.quantity}</Card.Subtitle>
                 <Card.Subtitle className="mb-2 text-muted">Precio Unitario: {product.price}</Card.Subtitle>
                 <Card.Subtitle className="mb-2 text-muted">SubTotal:${product.quantity * product.price}</Card.Subtitle>
-                <Button onClick={() => removeProduct(product.id)}> Eliminar</Button>
+                <Card.Footer  className="text-center bottom-0"> 
+                 <Button onClick={() => removeProduct(product.id)} variant="danger" > Eliminar</Button>
+                </Card.Footer>
             </Card.Body>   
         </Card>
     )

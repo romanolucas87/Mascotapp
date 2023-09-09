@@ -25,19 +25,14 @@ export const ItemDetailContainer = () =>{
             .finally(() => setIsLoading(false));    
     }, [productID])
     
-    if(isLoading) return <Loader/>;
 
-    // return(
-    //     <>
-    //     {isLoading && <Loader/>}
-    //     {!isLoading &&(
-    //         <ItemDetail data={product}/>
-    //     )}
-    //     </>
-    // )
-        return (
-        <ItemDetail data={product}/>
-
+    return(
+        <>
+        {isLoading && <Loader/>}
+        {!isLoading &&(
+            <ItemDetail data={product}/>
+        )}
+        </>
     )
 }
 
