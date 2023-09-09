@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function Footer() {
   return (
-    <footer className="bg-body-secondary py-4">
+    <footer className="bg-body-secondary py-4 mt-auto">
       <Container>
         <Row>
           <Col xs={12} md={6}>
