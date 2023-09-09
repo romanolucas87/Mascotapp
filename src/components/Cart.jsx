@@ -9,6 +9,16 @@ const Cart = () => {
   const handlerClickPurchase = () => {
     setShowOrderForm(true);
   };
+  const stylesParagraph = {
+    backgroundColor: "#fff",
+    padding: "20px",
+    borderRadius: "5px",
+    textAlign: "center",
+    fontSize: "24px", 
+    fontWeight: "bold", 
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
+  };
+
   return (
     <>
       {cart.length === 0 && (
@@ -18,10 +28,9 @@ const Cart = () => {
         >
           <Row>
             <Col>
-              <h2>
-                No hay elementos en el carrito por favor elija algún item y
-                disfrute de su compra!!!
-              </h2>
+              <p style={stylesParagraph}>
+                No hay elementos en el carrito por favor elija algún producto y continúe con la Compra
+              </p>
             </Col>
           </Row>
         </Container>
@@ -32,11 +41,11 @@ const Cart = () => {
             <Container className="vh-100 justify-content-center align-items-center">
               <Row className="Text-Center">
                 {cart.map((product) => (
-                  <ItemCart key={product.id} product={product}/>
+                  <ItemCart key={product.id} product={product} />
                 ))}
                 <div className="text-center">
                   <p className="h4 m-4">Precio total a Pagar ${totalPrice()}</p>
-                  <Button onClick={handlerClickPurchase} variant="success" >
+                  <Button onClick={handlerClickPurchase} variant="success">
                     COMPRAR
                   </Button>
                 </div>
