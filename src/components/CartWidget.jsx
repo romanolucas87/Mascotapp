@@ -4,7 +4,6 @@ import { useCartContext } from "../context/CartContext";
 
 function CartWidget() {
     const {totalProducts} = useCartContext();
-    console.log('total products ', totalProducts())
     return(
         <div className="text-center mt-4 mb-4">
             <Cart3 size={25}/>

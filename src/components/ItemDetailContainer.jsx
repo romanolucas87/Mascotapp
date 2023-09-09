@@ -11,14 +11,11 @@ export const ItemDetailContainer = () =>{
     const [isLoading, setIsLoading] = useState(true);
     const productID = useParams();
      useEffect(()=>{
-        console.log('produid', productID);
-
         const queryProducts = 
             collection(firestore, "productsPets")         
           getDocs(queryProducts)
-            .then((snapshot) => { console.log('snap' , snapshot)
-            const products =snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })); console.log('prod', products);
-            const producto = products.find(product => product.id === productID.id); console.log('producto', producto);
+            .then((snapshot) => { 
+            const products =snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })); 
             setProducts(products.find(product => product.id == productID.id))
             })
             .catch((e) => console.error(e))

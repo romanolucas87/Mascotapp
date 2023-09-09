@@ -35,10 +35,9 @@ function OrderForm() {
       })),
       totalPrice: totalPrice(),
     };
-    console.log("Order:", order);
 
     const ordersCollections = collection(firestore, 'orders');
-    addDoc(ordersCollections, order).then(({id})=> {console.log('id', id) ;navigate('/cart/purchase'); } ); 
+    addDoc(ordersCollections, order).then(({id})=> { id ? navigate('/cart/purchase') : null } ); 
   };
 
   return (

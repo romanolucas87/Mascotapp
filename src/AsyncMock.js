@@ -44,7 +44,6 @@ const productsPets = [
       setTimeout(()=> {
         const newProduct = productsPets.find(product => product.id == productId);
         newProduct ? resolve(newProduct): reject("No se encontró un PRODUCTO con ese ID");
-        console.log(newProduct);
       },2000);
     })
   }

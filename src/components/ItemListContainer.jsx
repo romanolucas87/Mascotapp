@@ -14,21 +14,17 @@ const ItemListContainer = () => {
     const queryProducts = collection(firestore, "productsPets");
     getDocs(queryProducts)
       .then((snapshot) => {
-        console.log("snap", snapshot);
         const productsCollection = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-        console.log("prod", productsCollection);
         if (params.id) {
           const productsFilter = productsCollection.filter(
             (product) => product.category == params.id
           );
-          console.log("producto", productsFilter);
           setProducts(productsFilter);
         } else {
           setProducts(productsCollection);
-          console.log("pasas por aca", productsCollection);
         }        
       })
       .catch((e) => console.error(e))
